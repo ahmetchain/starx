@@ -2,8 +2,10 @@ import React from "react";
 import { motion } from "framer-motion";
 import worldImage from "../../img/world.jpg";
 import mobileWorldImage from "../../img/mobile_world.jpg";
+import { useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
+  const navigate = useNavigate();
   return (
     <section className="min-h-[100svh] flex items-center justify-center relative overflow-hidden">
       {/* Background Image - Desktop */}
@@ -41,8 +43,11 @@ export default function HeroSection() {
             className="relative inline-block mb-6 md:mb-8"
           >
             <h1
-              className="text-4xl sm:text-4xl md:text-7xl font-bold tracking-wider bg-gradient-to-r from-white to-indigo-200 
+              className="text-4xl sm:text-4xl md:text-7xl font-bold tracking-wider bg-white 
                          bg-clip-text text-transparent relative z-10 px-2"
+              style={{
+                lineHeight: "1.3",
+              }}
             >
               "TEKNOLOJİYİ KEŞFET"
             </h1>
@@ -66,6 +71,7 @@ export default function HeroSection() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="relative group"
+            onClick={() => navigate("/contact")}
           >
             <span
               className="relative z-10 inline-block px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-medium rounded-lg
@@ -74,6 +80,7 @@ export default function HeroSection() {
             >
               BİZE ULAŞIN
             </span>
+
             <div
               className="absolute -inset-1 bg-white/20 rounded-lg blur-md
                           opacity-0 group-hover:opacity-100 transition duration-300"

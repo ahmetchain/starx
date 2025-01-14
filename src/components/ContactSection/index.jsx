@@ -1,7 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const ContactSection = () => {
+  const navigate = useNavigate()
   return (
     <section className="relative bg-black overflow-hidden">
       {/* Gradient Background */}
@@ -47,6 +49,7 @@ const ContactSection = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="relative group"
+            onClick={() => navigate("/contact")}
           >
             <span
               className="relative z-10 inline-block px-6 sm:px-10 py-3 sm:py-4 text-base sm:text-lg font-medium rounded-lg
